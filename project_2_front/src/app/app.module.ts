@@ -9,6 +9,7 @@ import { MoodforwhatComponent } from './moodforwhat/moodforwhat.component';
 import { RestaurantOrdersComponent } from './restaurant-orders/restaurant-orders.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegistrationComponent } from './components/registration/registration.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
