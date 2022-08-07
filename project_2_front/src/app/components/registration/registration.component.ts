@@ -8,7 +8,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+  
+  
   public user:User = {
     user_email: "",
     user_first_name: "",
