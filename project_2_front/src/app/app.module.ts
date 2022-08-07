@@ -8,6 +8,7 @@ import { ChooserestaurantComponent } from './chooserestaurant/chooserestaurant.c
 import { MoodforwhatComponent } from './moodforwhat/moodforwhat.component';
 import { RestaurantOrdersComponent } from './restaurant-orders/restaurant-orders.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ChooserestaurantComponent,
     MoodforwhatComponent,
     RestaurantOrdersComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
