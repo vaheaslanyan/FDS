@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ public class UserController {
 		this.uDAO = uDAO;
 	}
 	
+	@CrossOrigin
 	@PostMapping(value = "/register")
 	// Request Body 'automatically' converts from JSON
 	// All we need to learn is how to route the users input to here... simple enough to start
