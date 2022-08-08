@@ -14,8 +14,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // post request to insert a new user into backend
-  public createUser(user: User): Observable<User> {
-    return this.http.post(this.baseURL + "/register", user) as Observable<User>
+  public createUser(user?: User): Observable<User> {
+    return this.http.post<User>(this.baseURL + "/register", user);
   }
 
 }
