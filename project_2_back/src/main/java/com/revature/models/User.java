@@ -61,43 +61,38 @@ public class User {
 	// @JoinColumn(name = "roleId") // or role_id
 	// private Roles userRoleIdFk;
 	
-	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "user_role_id_fk", referencedColumnName="userRoleId") //referencedColumName needs to match field name in the referenced table's model
-	private UserRole userRoleIdFk;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "userRole", referencedColumnName="userRoleId") //referencedColumName needs to match field name in the referenced table's model
+	private UserRole userRole;
 
 	/* Constructors ---------------------------------------------------------------------------------------- */
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	// all except id for creating users
+
+	public User(String userUsername, String userPassword, String userFirstName, String userLastName, String userEmail) {
+		super();
+		this.userUsername = userUsername;
+		this.userPassword = userPassword;
+		this.userFirstName = userFirstName;
+		this.userLastName = userLastName;
+		this.userEmail = userEmail;
+	}
+
 	public User(String userUsername, String userPassword, String userFirstName, String userLastName, String userEmail,
-			UserRole userRoleIdFk) {
+			UserRole userRole) {
 		super();
 		this.userUsername = userUsername;
 		this.userPassword = userPassword;
 		this.userFirstName = userFirstName;
 		this.userLastName = userLastName;
 		this.userEmail = userEmail;
-		this.userRoleIdFk = userRoleIdFk;
+		this.userRole = userRole;
 	}
 
-	// all except id and password (for accessing user object post login)
-	public User(int userId, String userUsername, String userFirstName, String userLastName, String userEmail,
-			UserRole userRoleIdFk) {
-		super();
-		this.userId = userId;
-		this.userUsername = userUsername;
-		this.userFirstName = userFirstName;
-		this.userLastName = userLastName;
-		this.userEmail = userEmail;
-		this.userRoleIdFk = userRoleIdFk;
-	}
-
-	//all args
 	public User(int userId, String userUsername, String userPassword, String userFirstName, String userLastName,
-			String userEmail, UserRole userRoleIdFk) {
+			String userEmail, UserRole userRole) {
 		super();
 		this.userId = userId;
 		this.userUsername = userUsername;
@@ -105,18 +100,16 @@ public class User {
 		this.userFirstName = userFirstName;
 		this.userLastName = userLastName;
 		this.userEmail = userEmail;
-		this.userRoleIdFk = userRoleIdFk;
+		this.userRole = userRole;
 	}
 
-	/* toString -------------------------------------------------------------------------------------------- */
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userUsername=" + userUsername + ", userPassword=" + userPassword
 				+ ", userFirstName=" + userFirstName + ", userLastName=" + userLastName + ", userEmail=" + userEmail
-				+ ", userRoleIdFk=" + userRoleIdFk + "]";
+				+ ", userRole=" + userRole + "]";
 	}
 
-	/* Getters & Setters ----------------------------------------------------------------------------------- */
 	public int getUserId() {
 		return userId;
 	}
@@ -165,12 +158,26 @@ public class User {
 		this.userEmail = userEmail;
 	}
 
-	public UserRole getUserRoleIdFk() {
-		return userRoleIdFk;
+	public UserRole getUserRole() {
+		return userRole;
 	}
 
-	public void setUserRoleIdFk(UserRole userRoleIdFk) {
-		this.userRoleIdFk = userRoleIdFk;
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
+	
+	// all except id for creating users
+
+
+	// all except id and password (for accessing user object post login)
+
+
+	//all args
+
+
+	/* toString -------------------------------------------------------------------------------------------- */
+
+
+	/* Getters & Setters ----------------------------------------------------------------------------------- */
 
 }

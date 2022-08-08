@@ -34,7 +34,7 @@ public class FoodItem {
 	private double foodItemCost;
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name = "restaurant_id_fk", referencedColumnName="restaurantId")
+	@JoinColumn(name = "restaurantId", referencedColumnName="restaurantId")
 	private Restaurant restaurantIdFk;
 
 	/* Constructors ---------------------------------------------------------------------------------------- */
