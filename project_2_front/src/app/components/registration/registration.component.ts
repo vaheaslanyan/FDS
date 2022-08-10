@@ -9,6 +9,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RegistrationComponent implements OnInit {
   
+  // user input for roleId
+  public input: number = 0;
+
   user: User = new User();
   
   constructor(private us:UserService) { }
@@ -18,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   //
   createUser(){
     console.log(this.user);
-    this.us.createUser(this.user).subscribe();
+    this.us.createUser(this.user, this.input).subscribe();
   }
 
 }

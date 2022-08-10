@@ -11,7 +11,7 @@ import { User } from '../models/user';
 
 export class UserService {
 
-  baseURL: string = "localhost:4009/food/user";
+  baseURL: string = "http://localhost:4009/food/user";
 
   // we need HttpClient in order to make requests
   constructor(private http: HttpClient) { }
@@ -25,8 +25,8 @@ export class UserService {
 };
 
   // post request to insert a new user into backend
-  public createUser(user?: User): Observable<User> {
-    return this.http.post<User>(this.baseURL + "/register", user, this.httpOptions);
+  public createUser(user: User, id:number): Observable<User> {
+    return this.http.post<User>(this.baseURL + "/register/" + id, user, this.httpOptions);
   }
 
 }

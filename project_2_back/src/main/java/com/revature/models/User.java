@@ -173,4 +173,9 @@ public class User {
 		this.userRoleIdFk = userRoleIdFk;
 	}
 
+	public void setUserRole(UserRole userRole) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

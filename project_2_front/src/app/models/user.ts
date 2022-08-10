@@ -7,5 +7,4 @@ export class User {
     userLastName?:string;
     userPassword?: string;
     userUsername?: string;
-    userRoleIdFk?: number;
 }
