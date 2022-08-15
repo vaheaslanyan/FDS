@@ -28,17 +28,10 @@
 =======
         <tbody>
             <tr *ngFor="let orderitem of orders">
->>>>>>> parent of ebc27cd (baton pass driver component)
                 <td>{{orderitem.orderId}}</td>
                 <td>{{orderitem?.userId?.userFirstName}} {{orderitem?.userId?.userLastName}}</td>
                 <td>${{orderitem.orderCost}}</td>
                 <td>{{orderitem?.orderStatusId?.orderStatusName}}</td>
-<<<<<<< HEAD
-                <div>
-                    <button type="submit" class="large-button" (click)="takeOrder(orderitem)">Accept Order</button>
-                </div>
-=======
->>>>>>> parent of ebc27cd (baton pass driver component)
             </tr>
         </tbody>
     </table>
