@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.2'
 	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 	id 'java'
+	id "org.sonarqube" version "3.4.0.2513"
 }
 
 group = 'com.revature'
@@ -24,10 +25,6 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-plugins {
-  id "org.sonarqube" version "3.4.0.2513"
 }
 
 sonarqube {
